@@ -23,6 +23,7 @@ export const TaskForm = () => {
   const isLoading = createTask.isLoading || updateTask.isLoading;
 
   const onSubmit: SubmitHandler<FormTask> = async (data) => {
+    data.project_id = selectedProjectId!;
     if (tastToEdit) {
       updateTask.mutate(
         { id: tastToEdit.id, data },
@@ -66,8 +67,7 @@ export const TaskForm = () => {
         title: '',
         description: '',
         state: 'pendiente',
-        priority: 'media',
-        project_id: selectedProjectId!
+        priority: 'media'
       });
     }
   }, [tastToEdit]);
