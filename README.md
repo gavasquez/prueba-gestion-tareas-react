@@ -2,7 +2,8 @@
 
 El siguiente proyecto es una prueba técnica, se realizó en la libreria React con TypeScript, el cual utiliza librerias como Zustand para gestión de estado de la UI,
 TanStack Query para el control de peticiones, para el diseño se instaló Tailwind y DaisyUi, Para Mensajes exitosos y de error se uso SweeAlert2, para los iconos
-se utilizo React-icons
+se utilizo React-icons, se utilizo como base de datos supase que estaba como opción en la descripción de la prueba, se crearon dos tablas en la base de datos con los datos
+minimos que deben tener cada una.
 
 Sigue los siguientes pasos para instalar y ejecutar
 
