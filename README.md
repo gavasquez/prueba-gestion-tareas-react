@@ -5,7 +5,8 @@ TanStack Query para el control de peticiones, para el diseño se instaló Tailwi
 se utilizo React-icons, se utilizo como base de datos supase que estaba como opción en la descripción de la prueba, se crearon dos tablas en la base de datos con los datos
 minimos que deben tener cada una.
 
-## Se ponen como puntos extras el DrakMode y el consumo de Api
+## Se ponen como puntos extras el DrakMode y el consumo de Api, tambien se pone persistente la información del Ui en el localStorage y en el consumo de la Api
+## Url del Deploy en Vercel: 
 
 Sigue los siguientes pasos para instalar y ejecutar
 
