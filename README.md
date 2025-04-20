@@ -12,7 +12,7 @@ Sigue los siguientes pasos para instalar y ejecutar
 
 2. **Renombrar la carpeta del proyecto o ubicarla donde desees.**
 
-3. **Copiar el archivo `.env.example` y renombrarlo como `.env`.**  
+3. **Copiar el archivo `.env.example` y renombrarlo como `.env`**  
    Este archivo contiene las variables necesarias para la conexión con Supabase.  
    Las llaves de acceso serán compartidas por correo.
 
