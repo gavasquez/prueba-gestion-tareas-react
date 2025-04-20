@@ -6,7 +6,7 @@ se utilizo React-icons, se utilizo como base de datos supase que estaba como opc
 minimos que deben tener cada una.
 
 ## Se ponen como puntos extras el DrakMode y el consumo de Api, tambien se pone persistente la información del Ui en el localStorage y en el consumo de la Api
-## Url del Deploy en Vercel: 
+## Url del Deploy en Vercel: https://prueba-gestion-tareas-react.vercel.app/
 
 Sigue los siguientes pasos para instalar y ejecutar
 
