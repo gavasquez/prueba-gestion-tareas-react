@@ -4,18 +4,39 @@ import { useUiStore } from "../../store";
 import { TaskForm } from "./TaskForm";
 import { useTaskListManager } from "../../hooks/useTaskListManager";
 import { TaskCardItem } from "../../components/TaskCardItem";
-
+import { useEffect } from 'react';
+import { requestNotificationPermission } from '../../utils/requestPermiso';
+import { isTaskDueSoon } from '../../utils/isTaskDusSoon';
+import { showNotification } from '../../utils/showNotification';
 
 export const TasksList = () => {
 
   const { selectedProjectId } = useUiStore();
   const { isModalTaskOpen, onModalTaskOpen } = useUiStore();
   
+  const { isLoading, tasks, filters, filteredTasks, error, clearFilters, handleFilterChange } = useTaskListManager(selectedProjectId ?? 0);
+  
+  useEffect(() => {
+    const notifyTasks = async () => {
+      const granted = await requestNotificationPermission();
+      if (!granted || !filteredTasks) return;
+      
+      filteredTasks.forEach(task => {
+        if (
+          task.state === 'completado' &&
+          isTaskDueSoon(task.end_date?.toString() ?? '')
+        ) {
+          showNotification(task.title);
+        }
+      });
+    };
+  
+    notifyTasks();
+  }, [filteredTasks]);
+  
   if (!selectedProjectId) {
     return <p className="text-gray-500">Selecciona un proyecto para ver las tareas.</p>;
   }
-
-  const { isLoading, tasks, filters, filteredTasks, error, clearFilters, handleFilterChange } = useTaskListManager(selectedProjectId);
 
   if (isLoading) return <Loading />;
   if (error) return <p>Error al cargar tareas</p>;

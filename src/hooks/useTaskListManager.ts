@@ -10,7 +10,7 @@ interface Filters {
 
 type FilterKey = keyof Filters;
 
-export const useTaskListManager = (selectedProjectId: number) => {
+export const useTaskListManager = (selectedProjectId?: number) => {
 
 
     const [filters, setFilters] = useState<Filters>({
@@ -20,7 +20,7 @@ export const useTaskListManager = (selectedProjectId: number) => {
     });
 
 
-    const { isLoading, data: tasks, error } = useTasks(selectedProjectId);
+    const { isLoading, data: tasks, error } = useTasks(selectedProjectId ?? 0);
 
     const filteredTasks: Task[] = useMemo(() => {
         if (!tasks) return [];
